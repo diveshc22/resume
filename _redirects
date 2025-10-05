@@ -1,0 +1,4 @@
+# Netlify redirects (if you choose Netlify instead of GitHub Pages)
+/           /index.html   200
+/resume     /resume.pdf   200
+/pdf        /resume.pdf   200

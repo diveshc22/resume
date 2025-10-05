@@ -1,0 +1,11 @@
+# This is a placeholder for the PDF file
+# To generate the actual PDF:
+# 1. Open index.html in a web browser
+# 2. Press Ctrl+P (or Cmd+P on Mac)
+# 3. Select "Save as PDF"
+# 4. Save as "resume.pdf" in this directory
+# 
+# Alternatively, you can use tools like:
+# - Puppeteer to automate PDF generation
+# - wkhtmltopdf command line tool
+# - Online HTML to PDF converters

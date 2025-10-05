@@ -1,0 +1,29 @@
+{
+  "name": "divesh-resume",
+  "version": "1.0.0",
+  "description": "Professional resume website for Divesh Chakrayat - Full Stack Developer",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "build:pdf": "puppeteer print index.html resume.pdf",
+    "serve": "live-server --port=8000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/resume.git"
+  },
+  "keywords": [
+    "resume",
+    "cv",
+    "portfolio",
+    "full-stack-developer",
+    "divesh-chakrayat"
+  ],
+  "author": "Divesh Chakrayat",
+  "license": "MIT",
+  "homepage": "https://cv.divesh.me",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "puppeteer": "^21.0.0"
+  }
+}
