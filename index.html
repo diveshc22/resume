@@ -1,483 +1,598 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Divesh Chakrayat - Full Stack Developer Resume</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Divesh Chakrayat | Full Stack Developer | SaaS Backend Architect
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Merriweather:wght@700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      :root {
+        --page-bg: #eef1f3;
+        --paper: #ffffff;
+        --text: #0f172a;
+        --muted: #334155;
+        --line: #cbd5e1;
+        --soft: #e2e8f0;
+        --heading: #111827;
+      }
 
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: var(--page-bg);
+        color: var(--text);
+        font-family: "Source Sans 3", "Segoe UI", sans-serif;
+        line-height: 1.45;
+        padding: 20px;
+      }
+
+      .resume {
+        max-width: 920px;
+        margin: 0 auto;
+        background: var(--paper);
+        border: 1px solid var(--soft);
+        padding: 32px;
+      }
+
+      .header {
+        display: grid;
+        grid-template-columns: 108px 1fr;
+        gap: 18px;
+        align-items: center;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .avatar {
+        width: 108px;
+        height: 108px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid var(--line);
+      }
+
+      .name {
+        font-family: "Merriweather", serif;
+        font-size: 2rem;
+        line-height: 1.1;
+        color: var(--heading);
+        letter-spacing: 0.2px;
+      }
+
+      .title {
+        font-size: 1.04rem;
+        font-weight: 600;
+        color: var(--muted);
+        margin-top: 4px;
+      }
+
+      .contact {
+        margin-top: 8px;
+        font-size: 0.95rem;
+        color: #1f2937;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 14px;
+      }
+
+      .contact a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .divider {
+        color: #94a3b8;
+      }
+
+      section {
+        padding-top: 18px;
+      }
+
+      h2 {
+        font-size: 0.9rem;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: #1e293b;
+        margin-bottom: 9px;
+        font-weight: 700;
+      }
+
+      p {
+        color: #1e293b;
+      }
+
+      .summary {
+        max-width: 95ch;
+        font-size: 1rem;
+      }
+
+      .two-col-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px 28px;
+        list-style: none;
+        padding-left: 2px;
+        color: #0f172a;
+      }
+
+      .two-col-list li {
+        position: relative;
+        padding-left: 14px;
+      }
+
+      .two-col-list li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #475569;
+      }
+
+      .experience-item {
+        margin-bottom: 16px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .experience-item:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      .company {
+        font-size: 1.08rem;
+        font-weight: 700;
+        color: #111827;
+      }
+
+      .role {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #1f2937;
+        margin-top: 2px;
+      }
+
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 4px 12px;
+        color: #475569;
+        font-size: 0.92rem;
+        margin-top: 3px;
+      }
+
+      .impact {
+        margin-top: 8px;
+        padding-left: 18px;
+        color: #0f172a;
+      }
+
+      .impact li {
+        margin-bottom: 4px;
+      }
+
+      .impact li:last-child {
+        margin-bottom: 0;
+      }
+
+      .edu-item {
+        margin-bottom: 10px;
+      }
+
+      .edu-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .edu-school {
+        font-weight: 700;
+        color: #111827;
+      }
+
+      .edu-degree {
+        color: #1f2937;
+      }
+
+      .edu-date {
+        color: #475569;
+        font-size: 0.94rem;
+      }
+
+      .stack-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 7px;
+      }
+
+      .stack-row {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        gap: 10px;
+      }
+
+      .stack-label {
+        font-weight: 700;
+        color: #111827;
+      }
+
+      .stack-value {
+        color: #1f2937;
+      }
+
+      @media (max-width: 760px) {
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-            padding: 20px;
+          padding: 10px;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        .resume {
+          padding: 20px;
         }
 
         .header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 3px solid #007bff;
+          grid-template-columns: 1fr;
         }
 
-        .name {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #007bff;
-            margin-bottom: 10px;
+        .two-col-list {
+          grid-template-columns: 1fr;
         }
 
-        .title {
-            font-size: 1.3em;
-            color: #666;
-            margin-bottom: 15px;
+        .stack-row {
+          grid-template-columns: 1fr;
+          gap: 2px;
+        }
+      }
+
+      @media print {
+        body {
+          background: #fff;
+          padding: 0;
         }
 
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            font-size: 0.95em;
+        .resume {
+          max-width: none;
+          border: none;
+          padding: 0;
         }
 
-        .contact-info span {
-            display: flex;
-            align-items: center;
-            gap: 5px;
+        section,
+        .experience-item,
+        .edu-item,
+        .stack-row {
+          break-inside: avoid;
         }
+      }
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+        margin-top: 10px;
+        font-size: 0.9rem;
+        color: #555;
+      }
 
-        .section {
-            margin-bottom: 30px;
-        }
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
 
-        .section-title {
-            font-size: 1.4em;
-            font-weight: bold;
-            color: #007bff;
-            margin-bottom: 15px;
-            padding-bottom: 5px;
-            border-bottom: 2px solid #e9ecef;
-        }
+      .icon {
+        width: 16px;
+        height: 16px;
+        color: #555;
+      }
 
-        .summary {
-            text-align: justify;
-            font-size: 1.05em;
-            line-height: 1.7;
-        }
+      .contact a {
+        text-decoration: none;
+        color: #333;
+        transition: color 0.2s ease;
+      }
 
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-category {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #007bff;
-        }
-
-        .skill-category h4 {
-            color: #007bff;
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-
-        .skill-list {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .skill-item {
-            background: #007bff;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 0.85em;
-            font-weight: 500;
-        }
-
-        .experience-item, .project-item, .education-item {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #28a745;
-        }
-
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
-        }
-
-        .item-title {
-            font-weight: bold;
-            font-size: 1.1em;
-            color: #333;
-        }
-
-        .item-company, .item-location {
-            color: #007bff;
-            font-weight: 500;
-        }
-
-        .item-date {
-            color: #666;
-            font-style: italic;
-            font-size: 0.9em;
-        }
-
-        .item-description {
-            margin-top: 10px;
-            line-height: 1.6;
-        }
-
-        .item-description ul {
-            margin-left: 20px;
-            margin-top: 8px;
-        }
-
-        .item-description li {
-            margin-bottom: 5px;
-        }
-
-        .projects {
-            display: grid;
-            gap: 15px;
-        }
-
-        .project-tech {
-            margin-top: 8px;
-            font-size: 0.9em;
-            color: #666;
-            font-style: italic;
-        }
-
-        .download-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #007bff;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 0.9em;
-            font-weight: 500;
-            text-decoration: none;
-            box-shadow: 0 4px 12px rgba(0,123,255,0.3);
-            transition: all 0.3s ease;
-        }
-
-        .download-btn:hover {
-            background: #0056b3;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0,123,255,0.4);
-        }
-
-        @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
-            
-            .container {
-                box-shadow: none;
-                border-radius: 0;
-                padding: 20px;
-            }
-            
-            .download-btn {
-                display: none;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-            
-            .name {
-                font-size: 2em;
-            }
-            
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-            
-            .item-header {
-                flex-direction: column;
-                gap: 5px;
-            }
-        }
+      .contact a:hover {
+        color: #4f46e5; /* Indigo */
+      }
     </style>
-</head>
-<body>
-    <a href="javascript:window.print()" class="download-btn">📄 Download PDF</a>
-    
-    <div class="container">
-        <header class="header">
-            <h1 class="name">Divesh Chakrayat</h1>
-            <p class="title">Full Stack Developer</p>
-            <div class="contact-info">
-                <span>📧 divesh@example.com</span>
-                <span>📱 +1 (555) 123-4567</span>
-                <span>🌐 divesh.me</span>
-                <span>💼 github.com/divesh</span>
-                <span>📍 Your City, Country</span>
-            </div>
-        </header>
+  </head>
+  <body>
+    <main class="resume">
+      <header class="header">
+        <img
+          class="avatar"
+          src="profile.png"
+          alt="Divesh Chakrayat profile image"
+        />
 
-        <section class="section">
-            <h2 class="section-title">Professional Summary</h2>
-            <div class="summary">
-                Passionate full stack developer with expertise in modern web technologies and frameworks. 
-                Experienced in building scalable web applications from concept to deployment. Strong background 
-                in both frontend and backend development, with a focus on creating efficient, user-friendly 
-                solutions. Proficient in multiple programming languages and frameworks, with a track record 
-                of delivering high-quality software solutions on time and within budget.
-            </div>
-        </section>
+        <div>
+          <h1 class="name">Divesh Chakrayat</h1>
+          <p class="title">Full Stack Developer | SaaS Backend Architect</p>
 
-        <section class="section">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills">
-                <div class="skill-category">
-                    <h4>Frontend Development</h4>
-                    <ul class="skill-list">
-                        <li class="skill-item">React</li>
-                        <li class="skill-item">Next.js</li>
-                        <li class="skill-item">Vue.js</li>
-                        <li class="skill-item">TypeScript</li>
-                        <li class="skill-item">JavaScript</li>
-                        <li class="skill-item">HTML5</li>
-                        <li class="skill-item">CSS3</li>
-                        <li class="skill-item">Sass/SCSS</li>
-                        <li class="skill-item">Tailwind CSS</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h4>Backend Development</h4>
-                    <ul class="skill-list">
-                        <li class="skill-item">Node.js</li>
-                        <li class="skill-item">Express.js</li>
-                        <li class="skill-item">Python</li>
-                        <li class="skill-item">Django</li>
-                        <li class="skill-item">FastAPI</li>
-                        <li class="skill-item">PHP</li>
-                        <li class="skill-item">Laravel</li>
-                        <li class="skill-item">REST APIs</li>
-                        <li class="skill-item">GraphQL</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h4>Database & Cloud</h4>
-                    <ul class="skill-list">
-                        <li class="skill-item">PostgreSQL</li>
-                        <li class="skill-item">MongoDB</li>
-                        <li class="skill-item">MySQL</li>
-                        <li class="skill-item">Redis</li>
-                        <li class="skill-item">AWS</li>
-                        <li class="skill-item">Vercel</li>
-                        <li class="skill-item">Docker</li>
-                        <li class="skill-item">Git</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+          <div class="contact">
+            <!-- Email -->
+            <span class="contact-item">
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M4 4h16v16H4z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <a href="mailto:diveshc22@gmail.com">diveshc22@gmail.com</a>
+            </span>
 
-        <section class="section">
-            <h2 class="section-title">Professional Experience</h2>
-            
-            <div class="experience-item">
-                <div class="item-header">
-                    <div>
-                        <div class="item-title">Senior Full Stack Developer</div>
-                        <div class="item-company">Tech Solutions Inc.</div>
-                        <div class="item-location">Remote</div>
-                    </div>
-                    <div class="item-date">2022 - Present</div>
-                </div>
-                <div class="item-description">
-                    <ul>
-                        <li>Led development of multiple full-stack web applications serving 10,000+ users</li>
-                        <li>Architected and implemented scalable microservices using Node.js and React</li>
-                        <li>Collaborated with cross-functional teams to deliver features on time and within budget</li>
-                        <li>Mentored junior developers and conducted code reviews to maintain code quality</li>
-                        <li>Implemented CI/CD pipelines reducing deployment time by 60%</li>
-                    </ul>
-                </div>
-            </div>
+            <!-- WhatsApp -->
+            <span class="contact-item">
+              <svg class="icon" viewBox="0 0 32 32" fill="currentColor">
+                <path
+                  d="M16 0C7.163 0 0 7.163 0 16c0 2.82.737 5.468 2.027 7.773L0 32l8.422-2.21A15.94 15.94 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.5a13.4 13.4 0 0 1-6.83-1.87l-.49-.29-5 .9.94-4.87-.32-.5A13.43 13.43 0 1 1 16 29.5zm7.38-10.06c-.4-.2-2.36-1.16-2.73-1.29-.37-.13-.64-.2-.91.2-.27.4-1.05 1.29-1.29 1.56-.24.27-.47.3-.87.1-.4-.2-1.69-.62-3.22-1.98-1.19-1.06-2-2.36-2.24-2.76-.24-.4-.03-.62.17-.82.18-.18.4-.47.6-.7.2-.24.27-.4.4-.67.13-.27.07-.5-.03-.7-.1-.2-.91-2.2-1.25-3-.33-.8-.66-.7-.91-.71l-.77-.01c-.27 0-.7.1-1.07.5-.37.4-1.4 1.37-1.4 3.33 0 1.96 1.43 3.86 1.63 4.13.2.27 2.8 4.27 6.78 5.99.95.41 1.69.66 2.27.85.95.3 1.81.26 2.49.16.76-.11 2.36-.97 2.69-1.91.33-.94.33-1.74.23-1.91-.1-.17-.37-.27-.77-.47z"
+                />
+              </svg>
+              <a
+                href="https://wa.me/917248727854?text=Hi%20Divesh,%20I%20reviewed%20your%20resume%20and%20would%20like%20to%20connect."
+                target="_blank"
+              >
+                WhatsApp
+              </a>
+            </span>
 
-            <div class="experience-item">
-                <div class="item-header">
-                    <div>
-                        <div class="item-title">Full Stack Developer</div>
-                        <div class="item-company">Digital Innovations Ltd.</div>
-                        <div class="item-location">Your City, Country</div>
-                    </div>
-                    <div class="item-date">2020 - 2022</div>
-                </div>
-                <div class="item-description">
-                    <ul>
-                        <li>Developed responsive web applications using React, Node.js, and PostgreSQL</li>
-                        <li>Built RESTful APIs and integrated third-party services</li>
-                        <li>Optimized application performance resulting in 40% faster load times</li>
-                        <li>Participated in agile development processes and sprint planning</li>
-                        <li>Implemented automated testing strategies improving code coverage to 85%</li>
-                    </ul>
-                </div>
-            </div>
+            <!-- Website -->
+            <span class="contact-item">
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15 15 0 0 1 0 20"></path>
+              </svg>
+              <a href="https://divesh.me" target="_blank">divesh.me</a>
+            </span>
 
-            <div class="experience-item">
-                <div class="item-header">
-                    <div>
-                        <div class="item-title">Frontend Developer</div>
-                        <div class="item-company">Web Agency Co.</div>
-                        <div class="item-location">Your City, Country</div>
-                    </div>
-                    <div class="item-date">2019 - 2020</div>
-                </div>
-                <div class="item-description">
-                    <ul>
-                        <li>Created responsive websites using HTML5, CSS3, JavaScript, and React</li>
-                        <li>Collaborated with designers to implement pixel-perfect UI/UX designs</li>
-                        <li>Developed custom WordPress themes and plugins</li>
-                        <li>Ensured cross-browser compatibility and mobile responsiveness</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+            <!-- GitHub -->
+            <span class="contact-item">
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .5C5.65.5.5 5.65.5 12
+          c0 5.08 3.29 9.39 7.86 10.91
+          .58.1.79-.25.79-.55
+          0-.27-.01-1.18-.02-2.14
+          -3.2.69-3.88-1.54-3.88-1.54
+          -.52-1.34-1.27-1.7-1.27-1.7
+          -1.04-.71.08-.7.08-.7
+          1.15.08 1.76 1.18 1.76 1.18
+          1.02 1.76 2.67 1.25 3.32.96
+          .1-.74.4-1.25.72-1.54
+          -2.55-.29-5.24-1.27-5.24-5.66
+          0-1.25.45-2.27 1.18-3.07
+          -.12-.29-.51-1.47.11-3.06
+          0 0 .97-.31 3.17 1.17
+          a10.9 10.9 0 0 1 5.78 0
+          c2.2-1.48 3.17-1.17 3.17-1.17
+          .62 1.59.23 2.77.11 3.06
+          .73.8 1.18 1.82 1.18 3.07
+          0 4.4-2.69 5.37-5.25 5.65
+          .41.35.78 1.04.78 2.1
+          0 1.52-.01 2.75-.01 3.12
+          0 .3.21.65.8.54
+          A10.99 10.99 0 0 0 23.5 12
+          C23.5 5.65 18.35.5 12 .5z"
+                />
+              </svg>
+              <a href="https://github.com/diveshc22" target="_blank"
+                >github.com/diveshc22</a
+              >
+            </span>
 
-        <section class="section">
-            <h2 class="section-title">Notable Projects</h2>
-            <div class="projects">
-                <div class="project-item">
-                    <div class="item-header">
-                        <div>
-                            <div class="item-title">E-Commerce Platform</div>
-                            <div class="item-company">Personal Project</div>
-                        </div>
-                        <div class="item-date">2023</div>
-                    </div>
-                    <div class="item-description">
-                        Built a full-featured e-commerce platform with React frontend, Node.js backend, 
-                        and PostgreSQL database. Features include user authentication, payment processing, 
-                        inventory management, and admin dashboard.
-                        <div class="project-tech">Tech Stack: React, Node.js, Express, PostgreSQL, Stripe API, JWT</div>
-                    </div>
-                </div>
+            <!-- LinkedIn -->
+            <span class="contact-item">
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M4.98 3.5C4.98 5 3.87 6.1 2.5 6.1
+          1.13 6.1 0 5 0 3.5
+          0 2 1.13.9 2.5.9
+          3.87.9 4.98 2 4.98 3.5zM.5 8h4V24h-4zM8 8h3.8v2.2h.05
+          c.53-1 1.83-2.2 3.77-2.2
+          4.03 0 4.78 2.65 4.78 6.1V24h-4v-7.6
+          c0-1.8-.03-4.1-2.5-4.1
+          -2.5 0-2.88 1.95-2.88 4V24H8z"
+                />
+              </svg>
+              <a href="https://www.linkedin.com/in/diveshc22" target="_blank">
+                linkedin.com/in/diveshc22
+              </a>
+            </span>
 
-                <div class="project-item">
-                    <div class="item-header">
-                        <div>
-                            <div class="item-title">Task Management Application</div>
-                            <div class="item-company">Freelance Project</div>
-                        </div>
-                        <div class="item-date">2022</div>
-                    </div>
-                    <div class="item-description">
-                        Developed a collaborative task management tool with real-time updates, file sharing, 
-                        and team collaboration features. Supports drag-and-drop functionality and project analytics.
-                        <div class="project-tech">Tech Stack: Next.js, TypeScript, Socket.io, MongoDB, Tailwind CSS</div>
-                    </div>
-                </div>
+            <!-- Location -->
+            <span class="contact-item">
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"
+                ></path>
+                <circle cx="12" cy="9" r="2.5"></circle>
+              </svg>
+              <span>Haldwani, Uttarakhand, India</span>
+            </span>
+          </div>
+        </div>
+      </header>
 
-                <div class="project-item">
-                    <div class="item-header">
-                        <div>
-                            <div class="item-title">Portfolio Website</div>
-                            <div class="item-company">Personal Project</div>
-                        </div>
-                        <div class="item-date">2023</div>
-                    </div>
-                    <div class="item-description">
-                        Designed and developed a modern portfolio website showcasing projects and skills. 
-                        Features include dark/light mode, smooth animations, and responsive design.
-                        <div class="project-tech">Tech Stack: Next.js, TypeScript, Framer Motion, Tailwind CSS, Vercel</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <section>
+        <h2>Professional Summary</h2>
+        <p class="summary">
+          Senior Full Stack Developer and SaaS Architect with 7+ years of
+          experience designing and building scalable backend systems and SaaS
+          platforms. Specialized in API architecture, performance optimization,
+          and cloud deployment. Experienced in working with startups and product
+          teams to deliver secure, high-availability applications used in
+          real-world production environments. Strong focus on maintainable
+          systems, predictable delivery, and operational reliability.
+        </p>
+      </section>
 
-        <section class="section">
-            <h2 class="section-title">Education</h2>
-            <div class="education-item">
-                <div class="item-header">
-                    <div>
-                        <div class="item-title">Bachelor of Computer Science</div>
-                        <div class="item-company">University Name</div>
-                        <div class="item-location">Your City, Country</div>
-                    </div>
-                    <div class="item-date">2016 - 2019</div>
-                </div>
-                <div class="item-description">
-                    Relevant coursework: Data Structures, Algorithms, Database Systems, Software Engineering, 
-                    Web Development, Computer Networks
-                </div>
-            </div>
-        </section>
+      <section>
+        <h2>Core Expertise</h2>
+        <ul class="two-col-list">
+          <li>SaaS Architecture &amp; System Design</li>
+          <li>Scalable API Development</li>
+          <li>Backend Engineering (Laravel, Node.js)</li>
+          <li>Database Design &amp; Optimization</li>
+          <li>Cloud Infrastructure &amp; Deployment</li>
+          <li>Payment Gateway Integration (Stripe, Razorpay)</li>
+          <li>CI/CD &amp; DevOps</li>
+          <li>Workflow Automation</li>
+        </ul>
+      </section>
 
-        <section class="section">
-            <h2 class="section-title">Certifications</h2>
-            <div class="experience-item">
-                <div class="item-description">
-                    <ul>
-                        <li>AWS Certified Developer Associate (2023)</li>
-                        <li>Google Cloud Professional Cloud Developer (2022)</li>
-                        <li>MongoDB Certified Developer (2021)</li>
-                        <li>React Developer Certification (2020)</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </div>
+      <section>
+        <h2>Professional Experience</h2>
 
-    <script>
-        // Add smooth scrolling and print functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // Print functionality
-            const downloadBtn = document.querySelector('.download-btn');
-            downloadBtn.addEventListener('click', function() {
-                window.print();
-            });
-            
-            // Add some interactivity
-            const skillItems = document.querySelectorAll('.skill-item');
-            skillItems.forEach(item => {
-                item.addEventListener('mouseenter', function() {
-                    this.style.transform = 'scale(1.05)';
-                });
-                item.addEventListener('mouseleave', function() {
-                    this.style.transform = 'scale(1)';
-                });
-            });
-        });
-    </script>
-</body>
+        <article class="experience-item">
+          <p class="company">Vyzion Innovations</p>
+          <p class="role">Full Stack Developer | SaaS Architect</p>
+          <p class="meta">
+            <span>Punjab, India | Hybrid</span>
+            <span>Aug 2021 - Feb 2026</span>
+          </p>
+          <ul class="impact">
+            <li>
+              Architected and maintained multi-tenant SaaS applications used by
+              client teams in production workflows.
+            </li>
+            <li>
+              Designed and implemented REST APIs handling production traffic
+              with stable response performance and clear service boundaries.
+            </li>
+            <li>
+              Optimized database queries, indexing strategies, and data access
+              patterns to improve latency and reduce server load.
+            </li>
+            <li>
+              Implemented CI/CD pipelines that reduced release effort and
+              improved deployment consistency across environments.
+            </li>
+            <li>
+              Partnered with product, design, and QA teams to translate
+              requirements into reliable backend and frontend deliverables.
+            </li>
+          </ul>
+        </article>
+
+        <article class="experience-item">
+          <p class="company">Test UX</p>
+          <p class="role">Freelance Developer</p>
+          <p class="meta">
+            <span>Remote, France | Contract</span>
+            <span>Jan 2020 - Aug 2021</span>
+          </p>
+          <ul class="impact">
+            <li>
+              Delivered client-facing SaaS modules for user testing workflows,
+              reporting, and account-level configuration.
+            </li>
+            <li>
+              Built backend services and automation workflows to reduce manual
+              operations and improve delivery speed.
+            </li>
+            <li>
+              Improved deployment and monitoring practices to increase system
+              reliability and reduce release-related incidents.
+            </li>
+            <li>
+              Integrated external APIs and background jobs to support
+              asynchronous processing and platform scalability.
+            </li>
+          </ul>
+        </article>
+
+        <article class="experience-item">
+          <p class="company">smartData Enterprises Inc.</p>
+          <p class="role">Web Developer</p>
+          <p class="meta">
+            <span>Mohali / Nagpur, India | Full-time</span>
+            <span>Jan 2018 - Dec 2019</span>
+          </p>
+          <ul class="impact">
+            <li>
+              Developed and maintained backend modules and APIs for web products
+              across healthcare and business domains.
+            </li>
+            <li>
+              Implemented data models and query logic for transactional systems
+              with a focus on data integrity.
+            </li>
+            <li>
+              Collaborated with senior engineers to resolve production defects
+              and improve service stability.
+            </li>
+            <li>
+              Supported integration of third-party services for authentication,
+              payments, and notification workflows.
+            </li>
+            <li>
+              Contributed to release cycles, regression fixes, and code reviews
+              to improve quality and delivery predictability.
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <div class="edu-item">
+          <p class="edu-school">Uttaranchal University</p>
+          <p class="edu-degree">Master of Computer Applications</p>
+          <p class="edu-date">2017 - 2019</p>
+        </div>
+        <div class="edu-item">
+          <p class="edu-school">Amrapali University Haldwani</p>
+          <p class="edu-degree">Bachelor of Computer Science</p>
+          <p class="edu-date">2013 - 2016</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Technology Stack</h2>
+        <div class="stack-grid">
+          <div class="stack-row">
+            <p class="stack-label">Backend:</p>
+            <p class="stack-value">Laravel, PHP, Node.js, Golang, Python</p>
+          </div>
+          <div class="stack-row">
+            <p class="stack-label">Frontend:</p>
+            <p class="stack-value">React.js, JavaScript, Tailwind CSS</p>
+          </div>
+          <div class="stack-row">
+            <p class="stack-label">Databases:</p>
+            <p class="stack-value">MySQL, MongoDB, PostgreSQL</p>
+          </div>
+          <div class="stack-row">
+            <p class="stack-label">Cloud &amp; DevOps:</p>
+            <p class="stack-value">AWS, Docker, Linux, CI/CD</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
