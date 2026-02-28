@@ -48,7 +48,7 @@ To use with your custom domain (cv.divesh.me):
 
 - **Email**: divesh@example.com
 - **Website**: [divesh.me](https://divesh.me)
-- **GitHub**: [github.com/divesh](https://github.com/divesh)
+- **GitHub**: [github.com/divesh](https://github.com/diveshc22)
 
 ---
 
