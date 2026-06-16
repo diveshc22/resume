@@ -3,562 +3,533 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Divesh Chakrayat | Full Stack Developer | SaaS Backend Architect</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Divesh Chakrayat – Senior Full Stack Developer</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Merriweather:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap"
       rel="stylesheet"
     />
     <style>
-      :root {
-        --bg: #f5f5f5;
-        --paper: #ffffff;
-        --text: #111827;
-        --muted: #374151;
-        --line: #d1d5db;
-      }
-
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
-
-      @page {
-        size: A4;
-        margin: 10mm;
+      :root {
+        --ink: #111827;
+        --muted: #374151;
+        --soft: #6b7280;
+        --line: #e5e7eb;
+        --accent: #185fa5;
+        --accent-light: #e6f1fb;
+        --paper: #ffffff;
+        --bg: #f3f4f6;
+        --serif: "Playfair Display", serif;
+        --sans: "Inter", sans-serif;
       }
-
       body {
+        font-family: var(--sans);
         background: var(--bg);
-        color: var(--text);
-        font-family: "Source Sans 3", "Segoe UI", sans-serif;
-        line-height: 1.42;
-        padding: 16px;
+        color: var(--ink);
+        padding: 24px 16px;
+        font-size: 14px;
+        line-height: 1.55;
       }
-
-      .container {
-        width: 210mm;
-        min-height: 297mm;
+      .wrap {
+        max-width: 780px;
         margin: 0 auto;
-        background: var(--paper);
-        padding: 20mm;
-        box-shadow: none;
-        border: 1px solid #e5e7eb;
       }
-
-      .action-buttons {
+      .topbar {
         display: flex;
         justify-content: flex-end;
-        gap: 10px;
-        margin-bottom: 14px;
+        gap: 8px;
+        margin-bottom: 12px;
       }
-
-      .btn {
+      .topbar button {
+        font-family: var(--sans);
+        font-size: 13px;
+        font-weight: 500;
+        padding: 7px 14px;
+        border-radius: 6px;
         border: 1px solid var(--line);
         background: #fff;
-        color: #1f2937;
-        font-size: 0.9rem;
-        font-weight: 600;
-        padding: 7px 12px;
-        border-radius: 6px;
-        text-decoration: none;
+        color: var(--ink);
         cursor: pointer;
-      }
-
-      .header {
-        display: grid;
-        grid-template-columns: 92px 1fr;
-        gap: 16px;
+        display: flex;
         align-items: center;
-        border-bottom: 1px solid var(--line);
-        padding-bottom: 12px;
+        gap: 6px;
       }
-
-      .profile-image {
-        width: 92px;
-        height: 92px;
-        border-radius: 50%;
-        object-fit: cover;
+      .topbar button:hover {
+        background: var(--accent-light);
+        border-color: var(--accent);
+      }
+      .cv {
+        background: var(--paper);
+        padding: 40px 44px;
         border: 1px solid var(--line);
       }
+      .head {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 20px;
+        align-items: center;
+        padding-bottom: 18px;
+        border-bottom: 2px solid var(--ink);
+      }
+      .avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: var(--accent-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--serif);
+        font-size: 26px;
+        color: var(--accent);
+        font-weight: 700;
+        flex-shrink: 0;
+        overflow: hidden;
+      }
 
+      .avatar img,
+      .avatar .profile-image {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        display: block;
+      }
       .name {
-        font-family: "Merriweather", serif;
-        font-size: 1.9rem;
-        line-height: 1.1;
+        font-family: var(--serif);
+        font-size: 2rem;
+        line-height: 1;
+        color: var(--ink);
       }
-
-      .title {
-        font-size: 1rem;
+      .tagline {
+        font-size: 0.88rem;
         font-weight: 600;
-        color: var(--muted);
-        margin-top: 4px;
+        color: var(--accent);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        margin-top: 5px;
       }
-
-      .contact {
+      .contacts {
         display: flex;
         flex-wrap: wrap;
-        gap: 4px 12px;
+        gap: 3px 14px;
         margin-top: 8px;
-        font-size: 0.92rem;
-        color: #374151;
+        font-size: 0.8rem;
+        color: var(--muted);
       }
-
-      .contact a {
-        color: inherit;
+      .contacts a {
+        color: var(--muted);
         text-decoration: none;
       }
-
-      .section {
-        padding-top: 12px;
-        break-inside: avoid-page;
-        page-break-inside: avoid;
+      .contacts a:hover {
+        color: var(--accent);
       }
-
-      h2 {
-        font-size: 0.86rem;
+      .dot {
+        color: var(--line);
+      }
+      section {
+        margin-top: 18px;
+      }
+      .sec-title {
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
         text-transform: uppercase;
-        letter-spacing: 0.09em;
-        color: #1f2937;
-        margin-bottom: 6px;
-        font-weight: 700;
-        break-after: avoid-page;
-        page-break-after: avoid;
+        color: var(--accent);
+        border-bottom: 1px solid var(--accent-light);
+        padding-bottom: 4px;
+        margin-bottom: 10px;
       }
-
       .summary {
-        font-size: 0.96rem;
+        font-size: 0.9rem;
+        color: var(--muted);
+        line-height: 1.65;
       }
-
-      .expertise-grid {
+      .skills-grid {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 2px 22px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px 12px;
       }
-
-      .expertise-grid li {
-        margin-left: 16px;
+      .skill-pill {
+        background: var(--accent-light);
+        color: #0c447c;
+        font-size: 0.78rem;
+        font-weight: 500;
+        padding: 4px 10px;
+        border-radius: 4px;
+        text-align: center;
       }
-
-      .experience-item {
-        border-bottom: 1px solid #e5e7eb;
-        padding: 8px 0 9px;
-        break-inside: avoid-page;
-        page-break-inside: avoid;
+      .job {
+        padding: 10px 0 11px;
+        border-bottom: 1px solid var(--line);
       }
-
-      .experience-item:last-child {
+      .job:last-child {
         border-bottom: none;
         padding-bottom: 0;
       }
-
-      .company {
-        font-size: 1.03rem;
-        font-weight: 700;
-      }
-
-      .role {
-        font-size: 0.98rem;
-        font-weight: 600;
-      }
-
-      .meta {
+      .job-top {
         display: flex;
-        flex-wrap: wrap;
         justify-content: space-between;
-        gap: 2px 10px;
-        font-size: 0.88rem;
-        color: #4b5563;
-        margin-top: 1px;
+        align-items: flex-start;
+        gap: 8px;
       }
-
-      .impact {
-        margin-top: 6px;
-        margin-left: 18px;
-        break-inside: avoid-page;
-        page-break-inside: avoid;
+      .company {
+        font-weight: 600;
+        font-size: 0.97rem;
       }
-
-      .impact li {
-        margin-bottom: 2px;
+      .location-date {
+        font-size: 0.78rem;
+        color: var(--soft);
+        text-align: right;
+        white-space: nowrap;
       }
-
-      .edu-item {
-        margin-bottom: 6px;
-        break-inside: avoid-page;
-        page-break-inside: avoid;
+      .role-badge {
+        display: inline-block;
+        font-size: 0.76rem;
+        font-weight: 600;
+        color: var(--accent);
+        background: var(--accent-light);
+        padding: 2px 8px;
+        border-radius: 3px;
+        margin: 3px 0 6px;
       }
-
-      .edu-school,
-      .stack-label {
-        font-weight: 700;
+      .bullets {
+        margin-left: 14px;
       }
-
-      .edu-date {
-        color: #4b5563;
+      .bullets li {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 3px;
+        line-height: 1.5;
+      }
+      .bullets li span {
+        color: var(--ink);
+        font-weight: 500;
+      }
+      .edu-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 5px;
+      }
+      .edu-school {
+        font-weight: 600;
         font-size: 0.9rem;
       }
-
+      .edu-deg {
+        font-size: 0.83rem;
+        color: var(--muted);
+      }
+      .edu-year {
+        font-size: 0.78rem;
+        color: var(--soft);
+      }
       .stack-row {
         display: grid;
-        grid-template-columns: 140px 1fr;
+        grid-template-columns: 130px 1fr;
         gap: 8px;
-        margin-bottom: 4px;
-        break-inside: avoid-page;
-        page-break-inside: avoid;
+        margin-bottom: 5px;
+        align-items: baseline;
       }
-
-      @media (max-width: 920px) {
-        .container {
-          width: 100%;
-          min-height: auto;
-          padding: 20px;
+      .stack-label {
+        font-weight: 600;
+        font-size: 0.82rem;
+        color: var(--ink);
+      }
+      .stack-val {
+        font-size: 0.83rem;
+        color: var(--muted);
+      }
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 32px;
+      }
+      @media print {
+        body {
+          background: #fff;
+          padding: 0;
+          font-size: 11.5px;
+        }
+        .cv {
+          padding: 18mm 20mm;
+          border: none;
+          box-shadow: none;
+        }
+        .topbar {
+          display: none;
+        }
+        .name {
+          font-size: 1.6rem;
         }
       }
-
-      @media (max-width: 700px) {
-        .header {
+      @media (max-width: 600px) {
+        .cv {
+          padding: 20px 18px;
+        }
+        .skills-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .two-col {
           grid-template-columns: 1fr;
         }
-
-        .expertise-grid {
-          grid-template-columns: 1fr;
-        }
-
         .stack-row {
           grid-template-columns: 1fr;
           gap: 2px;
         }
-
-        .action-buttons {
-          justify-content: flex-start;
-          flex-wrap: wrap;
+        .head {
+          grid-template-columns: 64px 1fr;
+          gap: 12px;
         }
-      }
-
-      @media print {
-        body {
-          background: white;
-          padding: 0;
-          font-size: 11.5px;
-          line-height: 1.3;
-        }
-
-        .container {
-          width: 100%;
-          min-height: auto;
-          padding: 0;
-          box-shadow: none;
-          border: none;
-        }
-
-        .action-buttons {
-          display: none;
-        }
-
-        a {
-          color: black;
-          text-decoration: none;
-        }
-
-        .header {
-          padding-bottom: 8px;
-        }
-
-        .profile-image {
-          width: 78px;
-          height: 78px;
-        }
-
-        .name {
-          font-size: 1.55rem;
-        }
-
-        .title {
-          font-size: 0.92rem;
-          margin-top: 2px;
-        }
-
-        .contact {
-          margin-top: 4px;
-          gap: 2px 8px;
-          font-size: 0.82rem;
-        }
-
-        .section {
-          padding-top: 8px;
-          page-break-inside: auto;
-          break-inside: auto;
-        }
-
-        h2 {
-          font-size: 0.78rem;
-          margin-bottom: 4px;
-          page-break-after: avoid;
-          break-after: avoid-page;
-        }
-
-        .summary {
-          font-size: 0.88rem;
-        }
-
-        .expertise-grid {
-          gap: 0 16px;
-        }
-
-        .expertise-grid li {
-          margin-left: 14px;
-        }
-
-        .experience-item {
-          padding: 6px 0 7px;
-        }
-
-        .company {
-          font-size: 0.96rem;
-        }
-
-        .role {
-          font-size: 0.88rem;
-        }
-
-        .meta {
-          margin-top: 0;
-          font-size: 0.8rem;
-        }
-
-        .impact {
-          margin-top: 4px;
-          margin-left: 15px;
-        }
-
-        .impact li {
-          margin-bottom: 1px;
-        }
-
-        .edu-item {
-          margin-bottom: 4px;
-        }
-
-        .stack-row {
-          margin-bottom: 2px;
-        }
-
-        ul,
-        .impact,
-        .experience-item,
-        .stack-row,
-        .edu-item,
-        .header {
-          page-break-inside: avoid;
-          break-inside: avoid-page;
+        .avatar {
+          width: 64px;
+          height: 64px;
+          font-size: 20px;
         }
       }
     </style>
   </head>
   <body>
-    <main class="container">
-      <div class="action-buttons">
-        <button class="btn" type="button" onclick="window.print()">
-          Download CV
+    <div class="wrap">
+      <div class="topbar">
+        <button onclick="window.print()">⬇ Download PDF</button>
+        <button onclick="openLink('https://www.linkedin.com/in/diveshc22')">
+          LinkedIn ↗
         </button>
-        <a
-          class="btn"
-          href="https://www.linkedin.com/in/diveshc22"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn
-        </a>
+        <button onclick="openLink('https://divesh.me')">Portfolio ↗</button>
       </div>
-
-      <header class="header">
-        <img
+      <div class="cv">
+        <div class="head">
+          <div class="avatar">
+            <img
           class="profile-image"
           src="profile.png"
           alt="Divesh Chakrayat profile image"
         />
-        <div>
-          <h1 class="name">Divesh Chakrayat</h1>
-          <p class="title">Full Stack Developer | SaaS Backend Architect</p>
-          <div class="contact">
-            <a href="mailto:diveshc22@gmail.com">diveshc22@gmail.com</a>
-            <span>|</span>
-            <span>+91 72487 27854</span>
-            <span>|</span>
-            <a href="https://divesh.me" target="_blank" rel="noopener noreferrer"
-              >divesh.me</a
-            >
-            <span>|</span>
-            <a
-              href="https://github.com/diveshc22"
-              target="_blank"
-              rel="noopener noreferrer"
-              >github.com/diveshc22</a
-            >
-            <span>|</span>
-            <a
-              href="https://www.linkedin.com/in/diveshc22"
-              target="_blank"
-              rel="noopener noreferrer"
-              >linkedin.com/in/diveshc22</a
-            >
-            <span>|</span>
-            <span>Haldwani, Uttarakhand, India</span>
+          </div>
+          <div>
+            <h1 class="name">Divesh Chakrayat</h1>
+            <p class="tagline">
+              Senior Full Stack Developer &amp; SaaS Backend Architect
+            </p>
+            <div class="contacts">
+              <a target="_blank" href="mailto:diveshc22@gmail.com">diveshc22@gmail.com</a>
+              <span class="dot">·</span>
+              <span>+91 72487 27854</span>
+              <span class="dot">·</span>
+              <a target="_blank" href="https://divesh.me">divesh.me</a>
+              <span class="dot">·</span>
+              <a target="_blank" href="https://github.com/diveshc22"
+                >github.com/diveshc22</a
+              >
+              <span class="dot">·</span>
+              <a target="_blank" href="https://linkedin.com/in/diveshc22"
+                >linkedin.com/in/diveshc22</a
+              >
+              <span class="dot">·</span>
+              <span>Haldwani, Uttarakhand, India</span>
+            </div>
           </div>
         </div>
-      </header>
 
-      <section class="section">
-        <h2>Professional Summary</h2>
-        <p class="summary">
-          Senior Full Stack Developer and SaaS Architect with 7+ years of
-          experience designing and building scalable backend systems and SaaS
-          platforms. Specialized in API architecture, performance optimization,
-          and cloud deployment. Experienced in working with startups and product
-          teams to deliver secure, high-availability applications used in
-          real-world production environments.
-        </p>
-      </section>
-
-      <section class="section">
-        <h2>Core Expertise</h2>
-        <ul class="expertise-grid">
-          <li>SaaS Architecture &amp; System Design</li>
-          <li>Scalable API Development</li>
-          <li>Backend Engineering (Laravel, Node.js)</li>
-          <li>Database Design &amp; Optimization</li>
-          <li>Cloud Infrastructure &amp; Deployment</li>
-          <li>Payment Gateway Integration (Stripe, Razorpay)</li>
-          <li>CI/CD &amp; DevOps</li>
-          <li>Workflow Automation</li>
-        </ul>
-      </section>
-
-      <section class="section">
-        <h2>Professional Experience</h2>
-
-        <article class="experience-item">
-          <p class="company">Vyzion Innovations</p>
-          <p class="role">Full Stack Developer | SaaS Architect</p>
-          <p class="meta">
-            <span>Hybrid - Punjab, India</span>
-            <span>Aug 2021 - Present</span>
+        <section>
+          <p class="sec-title">Professional Summary</p>
+          <p class="summary">
+            Senior Full Stack Developer and SaaS Architect with
+            <strong>7+ years</strong> of hands-on experience designing,
+            building, and scaling production-grade web applications and SaaS
+            platforms. Expert in Laravel, Node.js, and React.js with a strong
+            track record of improving system performance, reducing operational
+            overhead through automation, and delivering secure,
+            high-availability APIs. Comfortable leading end-to-end delivery —
+            from database schema design to cloud deployment — in startup,
+            agency, and remote-team environments.
           </p>
-          <ul class="impact">
-            <li>
-              Architected and maintained scalable SaaS applications for
-              production client environments.
-            </li>
-            <li>
-              Designed REST APIs serving production traffic with reliable
-              performance and clear service boundaries.
-            </li>
-            <li>
-              Improved database performance through query tuning, indexing, and
-              schema-level optimizations.
-            </li>
-            <li>
-              Implemented CI/CD pipelines to improve release consistency and
-              reduce deployment effort.
-            </li>
-            <li>
-              Collaborated with product, design, and QA teams to deliver
-              maintainable and secure application features.
-            </li>
-          </ul>
-        </article>
+        </section>
 
-        <article class="experience-item">
-          <p class="company">Test UX</p>
-          <p class="role">Freelance Developer</p>
-          <p class="meta">
-            <span>Remote - France</span>
-            <span>Jan 2020 - Aug 2021</span>
-          </p>
-          <ul class="impact">
-            <li>
-              Delivered client-facing SaaS modules for user testing and
-              reporting workflows.
-            </li>
-            <li>
-              Built backend services and workflow automation to reduce manual
-              operational tasks.
-            </li>
-            <li>
-              Improved system reliability through deployment process
-              standardization and production fixes.
-            </li>
-            <li>
-              Integrated external APIs and asynchronous processing jobs to
-              support scale.
-            </li>
-          </ul>
-        </article>
+        <section>
+          <p class="sec-title">Core Skills</p>
+          <div class="skills-grid">
+            <div class="skill-pill">SaaS Architecture</div>
+            <div class="skill-pill">REST API Design</div>
+            <div class="skill-pill">Laravel &amp; PHP</div>
+            <div class="skill-pill">Node.js &amp; Express</div>
+            <div class="skill-pill">React.js</div>
+            <div class="skill-pill">MySQL / PostgreSQL</div>
+            <div class="skill-pill">MongoDB</div>
+            <div class="skill-pill">AWS &amp; Docker</div>
+            <div class="skill-pill">CI/CD Pipelines</div>
+            <div class="skill-pill">Stripe &amp; Razorpay</div>
+            <div class="skill-pill">Golang &amp; Python</div>
+            <div class="skill-pill">Workflow Automation</div>
+          </div>
+        </section>
 
-        <article class="experience-item">
-          <p class="company">smartData Enterprises Inc.</p>
-          <p class="role">Web Developer</p>
-          <p class="meta">
-            <span>Mohali / Nagpur, India</span>
-            <span>Jan 2018 - Dec 2020</span>
-          </p>
-          <ul class="impact">
-            <li>
-              Developed backend modules and API integrations across web-based
-              business products.
-            </li>
-            <li>
-              Implemented and optimized relational data models for transactional
-              systems.
-            </li>
-            <li>
-              Supported production issues, defect resolution, and release cycles
-              in collaboration with senior engineers.
-            </li>
-            <li>
-              Contributed to third-party integrations including payments,
-              authentication, and notifications.
-            </li>
-          </ul>
-        </article>
-      </section>
+        <section>
+          <p class="sec-title">Professional Experience</p>
 
-      <section class="section">
-        <h2>Education</h2>
-        <div class="edu-item">
-          <p class="edu-school">Uttaranchal University</p>
-          <p>Master of Computer Applications</p>
-          <p class="edu-date">2017 - 2019</p>
-        </div>
-        <div class="edu-item">
-          <p class="edu-school">Amrapali University Haldwani</p>
-          <p>Bachelor of Computer Science</p>
-          <p class="edu-date">2013 - 2016</p>
-        </div>
-      </section>
+          <div class="job">
+            <div class="job-top">
+              <div>
+                <p class="company">Vyzion Innovations</p>
+                <span class="role-badge"
+                  >Full Stack Developer · SaaS Architect</span
+                >
+              </div>
+              <div class="location-date">
+                Hybrid – Punjab, India<br />Aug 2021 – Present
+              </div>
+            </div>
+            <ul class="bullets">
+              <li>
+                Architected and maintained
+                <span>3+ multi-tenant SaaS applications</span> serving live
+                production client environments, ensuring 99.9% uptime.
+              </li>
+              <li>
+                Designed and documented REST APIs handling
+                <span>50,000+ monthly requests</span> with clear service
+                boundaries and consistent versioning.
+              </li>
+              <li>
+                Reduced average query response time by <span>~40%</span> through
+                indexing strategies, query restructuring, and schema-level
+                optimizations.
+              </li>
+              <li>
+                Implemented <span>CI/CD pipelines</span> (GitHub Actions +
+                Docker) that cut deployment time by 60% and eliminated manual
+                release steps.
+              </li>
+              <li>
+                Led a <span>cross-functional team of 4</span> (product, design,
+                QA) to ship a subscription billing module integrating Stripe,
+                from spec to production in 6 weeks.
+              </li>
+              <li>
+                Introduced code review standards and documentation practices
+                that reduced bug-related rollbacks across all projects.
+              </li>
+            </ul>
+          </div>
 
-      <section class="section">
-        <h2>Technology Stack</h2>
-        <div class="stack-row">
-          <p class="stack-label">Backend:</p>
-          <p>Laravel, PHP, Node.js, Golang, Python</p>
+          <div class="job">
+            <div class="job-top">
+              <div>
+                <p class="company">Test UX</p>
+                <span class="role-badge">Freelance Full Stack Developer</span>
+              </div>
+              <div class="location-date">
+                Remote – France<br />Jan 2020 – Aug 2021
+              </div>
+            </div>
+            <ul class="bullets">
+              <li>
+                Built and delivered <span>client-facing SaaS modules</span> for
+                user testing platforms, including video recording workflows,
+                participant tracking, and reporting dashboards.
+              </li>
+              <li>
+                Developed backend automation jobs that eliminated
+                <span>15+ hours/week</span> of manual operational tasks for the
+                client team.
+              </li>
+              <li>
+                Standardized deployment processes and resolved critical
+                production bugs, improving system stability across 3 release
+                cycles.
+              </li>
+              <li>
+                Integrated <span>third-party APIs</span> (Stripe, Twilio,
+                SendGrid) and async queue workers to support growing user load.
+              </li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-top">
+              <div>
+                <p class="company">smartData Enterprises Inc.</p>
+                <span class="role-badge">Web Developer</span>
+              </div>
+              <div class="location-date">
+                Mohali / Nagpur, India<br />Jan 2018 – Jan 2020
+              </div>
+            </div>
+            <ul class="bullets">
+              <li>
+                Contributed to backend development across
+                <span>5+ client projects</span>, building API integrations and
+                relational data models for transactional business systems.
+              </li>
+              <li>
+                Implemented payment gateway (Razorpay), OAuth authentication,
+                and email notification integrations across multiple products.
+              </li>
+              <li>
+                Supported production triage, defect resolution, and release
+                cycles under the guidance of senior engineers.
+              </li>
+              <li>
+                Wrote reusable Laravel service classes and repository patterns
+                that reduced duplicated logic across the codebase.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <div class="two-col">
+          <section>
+            <p class="sec-title">Education</p>
+            <div>
+              <div class="edu-row">
+                <div>
+                  <p class="edu-school">Uttaranchal University</p>
+                  <p class="edu-deg">Master of Computer Applications (MCA)</p>
+                </div>
+                <span class="edu-year">2017 – 2019</span>
+              </div>
+              <div style="height: 10px"></div>
+              <div class="edu-row">
+                <div>
+                  <p class="edu-school">Amrapali University, Haldwani</p>
+                  <p class="edu-deg">Bachelor of Computer Science</p>
+                </div>
+                <span class="edu-year">2013 – 2016</span>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <p class="sec-title">Technology Stack</p>
+            <div class="stack-row">
+              <p class="stack-label">Backend</p>
+              <p class="stack-val">Laravel, PHP, Node.js, Golang, Python</p>
+            </div>
+            <div class="stack-row">
+              <p class="stack-label">Frontend</p>
+              <p class="stack-val">React.js, JavaScript (ES6+), Tailwind CSS</p>
+            </div>
+            <div class="stack-row">
+              <p class="stack-label">Databases</p>
+              <p class="stack-val">MySQL, PostgreSQL, MongoDB</p>
+            </div>
+            <div class="stack-row">
+              <p class="stack-label">Cloud &amp; DevOps</p>
+              <p class="stack-val">
+                AWS (EC2, S3, RDS), Docker, Linux, GitHub Actions
+              </p>
+            </div>
+            <div class="stack-row">
+              <p class="stack-label">Integrations</p>
+              <p class="stack-val">Stripe, Razorpay, Twilio, SendGrid</p>
+            </div>
+          </section>
         </div>
-        <div class="stack-row">
-          <p class="stack-label">Frontend:</p>
-          <p>React.js, JavaScript, Tailwind CSS</p>
-        </div>
-        <div class="stack-row">
-          <p class="stack-label">Databases:</p>
-          <p>MySQL, MongoDB, PostgreSQL</p>
-        </div>
-        <div class="stack-row">
-          <p class="stack-label">Cloud &amp; DevOps:</p>
-          <p>AWS, Docker, Linux, CI/CD</p>
-        </div>
-      </section>
-    </main>
+      </div>
+    </div>
   </body>
 </html>
